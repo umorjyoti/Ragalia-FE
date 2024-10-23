@@ -1,0 +1,49 @@
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  justify-content: space-between;
+  height: calc(100vh - 67px);
+  width: 216px;
+  border-right: 1px solid #d0d2dd;
+}
+.navbar-container .nav-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Nav Button */
+.nav-button-container {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  width: 184px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.nav-button-container .nav-button-icon {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+}
+.nav-button-container .nav-button-title {
+  color: #343954;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+}
+.nav-button-container.btn-active {
+  background-color: #5871ff;
+}
+.nav-button-title.text-active {
+  color: #fff;
+}

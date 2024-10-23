@@ -1,0 +1,217 @@
+.login-bg {
+  background-color: #5871ff;
+  padding: 16px;
+  display: flex;
+  height: 100vh;
+}
+.login-bg .login-image-container {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.login-bg .login-image-container .login-image {
+  height: 300px;
+  object-fit: contain;
+}
+.login-bg .login-image-container .login-text-title {
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  width: 300px;
+}
+
+.login-bg .login-details-container {
+  display: flex;
+  flex: 3;
+  border-radius: 0px 12px 12px 0px;
+  background: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-details-container .logo-data-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-data-conatiner .logo {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  margin-bottom: 36px;
+}
+.logo-data-conatiner .login-signup-text {
+  color: #000;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 36px;
+}
+.logo-data-conatiner .phone-number-input-title {
+  color: #3d3d3d;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  margin-bottom: 12px;
+}
+.logo-data-conatiner .phone-input {
+  display: flex;
+  width: 328px;
+  padding: 16px;
+  align-items: center;
+  border-radius: 8px;
+  border: 1.5px solid #101428;
+}
+.logo-data-conatiner .phone-number-container {
+  margin-bottom: 20px;
+}
+.logo-data-conatiner .login-btn {
+  display: flex;
+  width: 328px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 32px;
+  border: none;
+}
+
+.submit-btn-disabled {
+  background-color: #a3b1ff;
+}
+.submit-btn-enabled {
+  background: #5871ff;
+}
+.login-details-container .divider {
+  color: #5c5c5c;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-details-container .divider-line {
+  width: 142px;
+  height: 1px;
+  background: #5c5c5c;
+  margin: 12px;
+}
+.login-details-container .google-sign-in-btn {
+  display: flex;
+  width: 328px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  border-radius: 8px;
+  border: 1.5px solid #5871ff;
+  background-color: #fff;
+}
+.login-details-container .google_logo {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.login-details-container .google-sign-text {
+  color: #5871ff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+}
+.login-details-container .message-text {
+  color: #101428;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+  position: absolute;
+  bottom: 36px;
+}
+.logo-data-conatiner .login-signup-text-desc {
+  color: #101428;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+  margin-top: -36px;
+  margin-bottom: 36px;
+}
+.logo-data-conatiner .back-btn {
+  color: #5871ff !important;
+  background-color: #fff !important;
+}
+
+.login-details-container .opt-input-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-bottom: 12px;
+}
+.opt-input-holder .otp-input-box {
+  border-radius: 8px;
+  border: 1.5px solid #3d3d3d;
+  padding: 12px;
+  width: 74px;
+}
+.login-details-container .resend-btn {
+  color: #5871ff;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+  text-decoration-line: underline;
+  margin-bottom: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+  display: inline-block;
+}
+.login-details-container .otp-holder-parent {
+  display: flex;
+  flex-direction: column;
+}
