@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 //inactive icons
@@ -9,11 +9,12 @@ import logoutIcon from "../../assets/images/logout_icon.png";
 
 //active icon
 import propertiesIconActive from "../../assets/images/properties_icon_active.png";
+import { useNavigate } from "react-router-dom";
 
 const NavButton = ({ icon, onClickBtn, btnName, active = false }) => {
   return (
     <div
-      onClick={onClickBtn}
+      onClick={() => onClickBtn(btnName)}
       className={
         active ? "nav-button-container btn-active" : "nav-button-container"
       }
@@ -29,29 +30,49 @@ const NavButton = ({ icon, onClickBtn, btnName, active = false }) => {
 };
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const [activeBtn, setActiveBtn] = useState("Dashboard");
+
+  const onClickNavBtn = (btnName) => {
+    setActiveBtn(btnName);
+    navigate(`/${btnName?.toLowerCase()}`);
+  };
   return (
     <div className="navbar-container">
       <div className="nav-actions">
         <NavButton
           icon={dashboardIcon}
-          onClickBtn={() => {}}
+          onClickBtn={onClickNavBtn}
           btnName={"Dashboard"}
+          active={activeBtn === "Dashboard"}
         />
         <NavButton
           icon={propertiesIconActive}
-          onClickBtn={() => {}}
+          onClickBtn={onClickNavBtn}
           btnName={"Properties"}
-          active={true}
+          active={activeBtn === "Properties"}
         />
-        <NavButton icon={peopleIcon} onClickBtn={() => {}} btnName={"People"} />
+        <NavButton
+          icon={peopleIcon}
+          onClickBtn={onClickNavBtn}
+          btnName={"People"}
+          active={activeBtn === "People"}
+        />
       </div>
       <div className="nav-actions">
         <NavButton
           icon={settingsIcon}
-          onClickBtn={() => {}}
+          onClickBtn={onClickNavBtn}
           btnName={"Settings"}
+          active={activeBtn === "Settings"}
         />
-        <NavButton icon={logoutIcon} onClickBtn={() => {}} btnName={"Logout"} />
+        <NavButton
+          icon={logoutIcon}
+          onClickBtn={onClickNavBtn}
+          btnName={"Logout"}
+          active={activeBtn === "Logout"}
+        />
       </div>
     </div>
   );
