@@ -1,0 +1,120 @@
+.people-details-container {
+  width: 100%;
+  padding: 28px 24px;
+  background-color: #fff;
+  height: calc(100vh - 67px);
+  overflow-y: auto;
+}
+
+.people-details-container .page-header {
+  margin-bottom: 20px;
+  color: #101428;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.profile-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid #d0d2dd;
+  padding: 12px;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.profile-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.profile-info .profile-info-name {
+  color: #101428;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+.profile-info .profile-info-others {
+  color: #101428;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.edit-button {
+  margin-top: 10px;
+}
+
+.details-section {
+  background-color: #f5f5ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.people-details-container .section-title-detail {
+  color: #04050a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+  margin-bottom: 10px;
+}
+.details-section hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.payment-history-section {
+  background-color: #eef;
+  margin: 30px 0px;
+  border-radius: 8px;
+}
+.payment-history-section .ant-table-wrapper {
+  border: 1px solid #5871ff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  overflow: hidden;
+}
+.payment-history-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px 12px 0px 0px;
+  background: #5871ff;
+  padding: 20px;
+}
+.section-title-detail-payment {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+.pending-status {
+  color: #ff9900;
+  font-weight: bold;
+}
+.profile-info .edit-button {
+  width: 150px;
+}

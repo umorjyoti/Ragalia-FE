@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./screens/Login";
 import DashboardLayout from "./screens/dashboard/DashboardLayout";
 
-function App() {
+
+const App = () => {
   const isAuthorised = false;
 
   return (
@@ -20,6 +21,6 @@ function App() {
       )}
     </Router>
   );
-}
+};
 
 export default App;

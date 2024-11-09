@@ -8,6 +8,9 @@ import Dashboard from "./Dashboard";
 import AddProperty from "../property/AddProperty";
 import AddAddress from "../property/AddAddress";
 import PropertyDetails from "../property/Properties";
+import PeopleDashboard from "../people/PeopleDashboard";
+import PeopleDetails from "../people/PeopleDetail";
+import EditPeople from "../people/EditPeople";
 
 const DashboardLayout = () => {
   return (
@@ -18,11 +21,17 @@ const DashboardLayout = () => {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
           <Route path="/properties" element={<PropertyDetails />} />
           <Route path="/properties/add-property" element={<AddProperty />} />
           <Route path="/properties/add-address" element={<AddAddress />} />
           <Route path="/properties/add-structure" element={<Dashboard />} />
           <Route path="/properties/add-others" element={<Dashboard />} />
+
+          <Route path="/people" element={<PeopleDashboard />} />
+          <Route path="/people/:name" element={<PeopleDetails />} />
+          <Route path="/people/edit/:name" element={<EditPeople />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
