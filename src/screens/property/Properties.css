@@ -1,0 +1,130 @@
+.property-details {
+  width: 100vw;
+  height: calc(100vh - 67px);
+  overflow-y: auto;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.property-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.occupant-types {
+  display: flex;
+  gap: 8px;
+}
+
+.occupant-tag {
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.property-stats {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  width: 120px;
+  text-align: center;
+}
+
+.stat-card h4 {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-filled {
+  height: 100%;
+  background-color: #1890ff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.floor-tabs {
+  margin: 20px 0;
+}
+
+.rooms-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.room-card {
+  width: 200px;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.room-card .room-details {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.room-card.expanded {
+  background-color: #f9f9f9;
+}
+
+.occupants {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.occupant-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.property-photos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.property-photo {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}

@@ -1,0 +1,110 @@
+.form-container {
+  padding: 28px 40px;
+  width: 100vw;
+  padding-bottom: 80px;
+  overflow-y: auto;
+  height: calc(100vh - 67px);
+}
+
+.form-container .add-prop-header {
+  padding: 32px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.save-exit-button {
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #a0a4bb;
+  padding: 5px 10px;
+
+  color: #a0a4bb;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.13px;
+}
+
+.form-container .add-property-text {
+  color: #101428;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.steps-container {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.form-layout {
+  width: 100%;
+}
+
+.form-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.form-item-full-width {
+  flex: 1;
+}
+
+/* Fixed button group */
+.button-group {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+/* Button styling */
+.button-group .ant-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.button-group .ant-btn-primary {
+  background-color: #7265e3; /* Same as 'Next' button color */
+  border-color: #7265e3;
+}
+
+.button-group .ant-btn-primary:hover,
+.button-group .ant-btn-primary:focus {
+  background-color: #fff !important;
+  border-color: #6054d4;
+}
+
+.back-btn .button-group .ant-btn {
+  color: #6054d4;
+  border-color: #7265e3;
+}
+
+.back-btn .button-group .ant-btn:hover,
+.back-btn .button-group .ant-btn:focus {
+  color: #6054d4;
+  border-color: #6054d4;
+}
+.button-group .active-btn {
+  color: #fff;
+}
+.button-group .active-btn:hover,
+.button-group .active-btn:focus {
+  color: #fff !important;
+  background-color: #6054d4 !important;
+}
