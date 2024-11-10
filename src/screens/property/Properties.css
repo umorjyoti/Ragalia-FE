@@ -2,7 +2,7 @@
   width: 100vw;
   height: calc(100vh - 67px);
   overflow-y: auto;
-  padding: 20px;
+  padding: 24px 40px;
   padding-bottom: 80px;
 }
 

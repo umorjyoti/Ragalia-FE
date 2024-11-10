@@ -23,15 +23,37 @@ const Avatar = ({}) => {
 const Header = () => {
   const navigate = useNavigate();
 
+  const [popOverOpen, setPopOverOpen] = useState(false);
+
+  const onClickHide = () => {
+    setPopOverOpen(false);
+  };
+
+  const handleOpenChange = () => {
+    setPopOverOpen(true);
+  };
+
   const onClickProperty = () => {
+    onClickHide();
     navigate("/properties/add-property");
   };
 
-  const onClickFloor = () => {};
+  const onClickFloor = () => {
+    onClickHide();
+  };
 
-  const onClickRoom = () => {};
+  const onClickRoom = () => {
+    onClickHide();
+  };
 
-  const onClickTenant = () => {};
+  const onClickTenant = () => {
+    onClickHide();
+    navigate("/people/add");
+  };
+
+  const onClickProfile = () => {
+    navigate("/profile");
+  };
 
   const content = (
     <div className="content-add-property">
@@ -62,6 +84,8 @@ const Header = () => {
           placement="bottom"
           title={<div className="pop-over-title">Add New</div>}
           arrow={false}
+          open={popOverOpen}
+          onOpenChange={handleOpenChange}
         >
           <div className="rounded-button-conatiner">
             <img src={plusIcon} alt="" className="rounded-icon" />
@@ -69,7 +93,9 @@ const Header = () => {
         </Popover>
 
         <RoundedButton icon={bellIcon} onClickBtn={() => {}} />
-        <Avatar />
+        <div onClick={onClickProfile}>
+          <Avatar />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,121 @@
+.edit-tenant-container {
+  width: 100vw;
+  height: calc(100vh - 67px);
+  overflow-y: auto;
+  padding: 28px 40px;
+  padding-bottom: 180px;
+}
+.edit-tenant-container .ant-divider-horizontal {
+  margin: 36px 0px;
+  height: 1px;
+  background: #04050a;
+}
+
+.edit-tenant-container h1 {
+  color: #101428;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0px;
+
+  margin-bottom: 36px;
+}
+
+.edit-tenant-container-section-title {
+  color: #101428;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 16px;
+}
+
+.edit-tenant-container-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 16px;
+  height: 74px;
+}
+.edit-tenant-container .ant-select-single {
+  height: auto !important;
+}
+
+.edit-tenant-container .ant-input-outlined,
+.edit-tenant-container .ant-select-selector,
+.edit-tenant-container .ant-picker-outlined,
+.edit-tenant-container .ant-input-number {
+  border-radius: 8px !important;
+  border: 1.5px solid #101428 !important;
+  display: flex !important;
+  width: 100% !important;
+  padding: 12px 16px !important;
+  align-items: center !important;
+  gap: 12px !important;
+  align-self: stretch !important;
+  height: 42px !important;
+  color: #101428 !important;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+}
+
+.edit-tenant-container-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-tenant-container-field label {
+  color: #101428;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 8px;
+}
+
+.edit-tenant-container-actions {
+  width: calc(100vw - 216px - 80px);
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  gap: 20px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0px;
+}
+.edit-tenant-container-actions .ant-btn {
+  display: flex;
+  width: 482px;
+  padding: 12px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border-radius: 8px;
+  border: 1.5px solid #5871ff;
+
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+  padding: 22px;
+}
+
+.edit-tenant-container-actions .edit-tenant-container-cancel-btn {
+  flex: 1;
+  color: #5871ff;
+}
+.edit-tenant-container-actions .edit-tenant-container-preview-btn {
+  color: #ffffff;
+  background: #5871ff;
+  flex: 1;
+}
+.edit-tenant-container-actions .edit-tenant-container-preview-btn:hover {
+  background: #5871ff;
+}

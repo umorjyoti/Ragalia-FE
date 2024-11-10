@@ -1,0 +1,57 @@
+.setting-landing-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 67px);
+  overflow-y: scroll;
+  padding: 24px 40px;
+}
+.setting-landing-container .setting-title {
+  color: #101428;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 32px;
+}
+.setting-landing-container .settings-card-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+/* Setting card */
+.setting-card {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  border-radius: 8px;
+  border: 2px solid #343954;
+  cursor: pointer;
+  width: 272px;
+}
+.setting-card .setting-card-icon {
+  width: 32px;
+  height: 32px;
+}
+.setting-card .setting-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.setting-card .setting-card-title {
+  color: #343954;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+}
+.setting-card .setting-info {
+  color: #343954;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+}

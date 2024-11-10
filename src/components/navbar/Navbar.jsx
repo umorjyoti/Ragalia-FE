@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
 //inactive icons
@@ -15,7 +15,11 @@ import settingsIconActive from "../../assets/images/settings_active.png";
 import dashboardIconActive from "../../assets/images/dashboard_active.png";
 import logoutIconActive from "../../assets/images/logout_active.png";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button, Modal } from "antd";
+import Lottie from "react-lottie";
+
+import logout from "../../assets/json/logout.json";
 
 const NavButton = ({ icon, onClickBtn, btnName, active = false }) => {
   return (
@@ -37,43 +41,88 @@ const NavButton = ({ icon, onClickBtn, btnName, active = false }) => {
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const [activeBtn, setActiveBtn] = useState("Dashboard");
+  const [activeBtn, setActiveBtn] = useState("");
+  const [logoutModal, setLogOutModal] = useState(false);
 
   const onClickNavBtn = (btnName) => {
-    setActiveBtn(btnName);
+    if (btnName === "Logout") {
+      setLogOutModal(true);
+      return;
+    }
     navigate(`/${btnName?.toLowerCase()}`);
   };
+
+  useEffect(() => {
+    if (location.pathname.includes("dashboard") || location.pathname === "/")
+      setActiveBtn("dashboard");
+    else if (location.pathname.includes("properties"))
+      setActiveBtn("properties");
+    else if (location.pathname.includes("people")) setActiveBtn("people");
+    else if (location.pathname.includes("settings")) setActiveBtn("settings");
+    else setActiveBtn("");
+  }, [location]);
+
+  const handleLogout = () => {
+    //clear local storage
+  };
+
+  const onClickCancel = () => {
+    setLogOutModal(false);
+  };
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    renderer: "svg",
+    animationData: logout,
+  };
+
   return (
     <div className="navbar-container">
       <div className="nav-actions">
         <NavButton
-          icon={activeBtn === "Dashboard" ? dashboardIconActive : dashboardIcon}
+          icon={
+            activeBtn === "Dashboard"?.toLocaleLowerCase()
+              ? dashboardIconActive
+              : dashboardIcon
+          }
           onClickBtn={onClickNavBtn}
           btnName={"Dashboard"}
-          active={activeBtn === "Dashboard"}
+          active={activeBtn === "Dashboard"?.toLocaleLowerCase()}
         />
         <NavButton
           icon={
-            activeBtn === "Properties" ? propertiesIconActive : propertiesIcon
+            activeBtn === "Properties"?.toLocaleLowerCase()
+              ? propertiesIconActive
+              : propertiesIcon
           }
           onClickBtn={onClickNavBtn}
           btnName={"Properties"}
-          active={activeBtn === "Properties"}
+          active={activeBtn === "Properties"?.toLocaleLowerCase()}
         />
         <NavButton
-          icon={activeBtn === "People" ? peopleIconActive : peopleIcon}
+          icon={
+            activeBtn === "People"?.toLocaleLowerCase()
+              ? peopleIconActive
+              : peopleIcon
+          }
           onClickBtn={onClickNavBtn}
           btnName={"People"}
-          active={activeBtn === "People"}
+          active={activeBtn === "People"?.toLocaleLowerCase()}
         />
       </div>
       <div className="nav-actions">
         <NavButton
-          icon={activeBtn === "Settings" ? settingsIconActive : settingsIcon}
+          icon={
+            activeBtn === "Settings"?.toLocaleLowerCase()
+              ? settingsIconActive
+              : settingsIcon
+          }
           onClickBtn={onClickNavBtn}
           btnName={"Settings"}
-          active={activeBtn === "Settings"}
+          active={activeBtn === "Settings"?.toLocaleLowerCase()}
         />
         <NavButton
           icon={activeBtn === "Logout" ? logoutIconActive : logoutIcon}
@@ -82,6 +131,37 @@ const Navbar = () => {
           active={activeBtn === "Logout"}
         />
       </div>
+
+      <Modal
+        open={logoutModal}
+        footer={false}
+        centered
+        closeIcon={false}
+        width={500}
+        height={300}
+      >
+        <div className="logout-modal-container">
+          <Lottie options={{ ...defaultOptions }} width={200} />
+          <div className="logout-sure-text">
+            Are you sure you want to log out?
+          </div>
+          <div className="btn-holder">
+            <Button
+              onClick={onClickCancel}
+              className="logout-modal-container-cancel-btn"
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={handleLogout}
+              className="logout-modal-container-preview-btn"
+              type="primary"
+            >
+              Logout
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };

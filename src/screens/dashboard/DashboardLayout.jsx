@@ -11,6 +11,9 @@ import PropertyDetails from "../property/Properties";
 import PeopleDashboard from "../people/PeopleDashboard";
 import PeopleDetails from "../people/PeopleDetail";
 import EditPeople from "../people/EditPeople";
+import PeoplePreview from "../people/PeoplePreview";
+import SettingLanding from "../settings/SettingLanding";
+import Profile from "../profile/Profile";
 
 const DashboardLayout = () => {
   return (
@@ -31,6 +34,16 @@ const DashboardLayout = () => {
           <Route path="/people" element={<PeopleDashboard />} />
           <Route path="/people/:name" element={<PeopleDetails />} />
           <Route path="/people/edit/:name" element={<EditPeople />} />
+          <Route
+            path="/people/edit/preview/:tenantid"
+            element={<PeoplePreview />}
+          />
+          <Route path="/people/add" element={<EditPeople />} />
+          <Route path="/people/preview/:tenantid" element={<PeoplePreview />} />
+
+          <Route path="/settings" element={<SettingLanding />} />
+
+          <Route path="/profile" element={<Profile />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

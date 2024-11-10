@@ -47,3 +47,54 @@
 .nav-button-title.text-active {
   color: #fff;
 }
+
+/* logout modal */
+.logout-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logout-modal-container .logout-sure-text {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 22px;
+}
+.logout-modal-container .btn-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+}
+.logout-modal-container .ant-btn {
+  display: flex;
+  padding: 12px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border-radius: 8px;
+  border: 1.5px solid #5871ff;
+  flex: 1;
+
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.16px;
+  padding: 22px;
+}
+
+.logout-modal-container .logout-modal-container-cancel-btn {
+  flex: 1;
+  color: #5871ff;
+}
+.logout-modal-container .logout-modal-container-preview-btn {
+  color: #ffffff;
+  background: #5871ff;
+  flex: 1;
+}
+.edit-tenant-container-actions .logout-modal-container-preview-btn:hover {
+  background: #5871ff;
+}

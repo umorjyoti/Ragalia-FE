@@ -1,5 +1,5 @@
 .dashboard-content-container {
-  padding: 28px 24px;
+  padding: 24px 40px;
   overflow-y: auto;
   height: calc(100vh - 67px);
   display: flex;
