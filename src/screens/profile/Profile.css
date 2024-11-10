@@ -1,0 +1,75 @@
+.profile-page-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vw -67px);
+  overflow-y: auto;
+  padding: 24px 40px;
+  width: 100vw;
+}
+.profile-page-container .profile-page-title {
+  color: #101428;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 34px;
+}
+.profile-page-container .profile-tab-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.profile-page-container .profile-tab-info {
+  display: flex;
+  align-items: start;
+  flex: 1;
+  flex-direction: column;
+  gap: 32px;
+}
+.profile-page-container .profile-tab-edit {
+  display: flex;
+  align-items: baseline;
+  flex: 1;
+  justify-content: end;
+}
+
+.profile-page-container .profile-pic {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+.profile-pic .title-pic {
+  color: #101428;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  width: 200px;
+}
+.profile-page-container .profile-pic-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+.edit-btn-tab {
+  display: inline-flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 100px;
+  border: 2px solid #4763ff;
+
+  color: #4763ff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.14px;
+}

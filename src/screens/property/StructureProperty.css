@@ -1,0 +1,41 @@
+.structure-property-container {
+  width: 100%;
+  height: calc(100vh - 67px);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.floor-tabs,
+.room-list,
+.floor-actions,
+.room-details,
+.navigation-buttons {
+  margin-bottom: 20px;
+}
+
+.floor-tabs button,
+.room-list button {
+  margin-right: 8px;
+}
+
+.floor-actions select {
+  width: 200px;
+}
+
+.room-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.room-amenities {
+  grid-column: span 2;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+}

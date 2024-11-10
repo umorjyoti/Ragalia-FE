@@ -14,6 +14,7 @@ import EditPeople from "../people/EditPeople";
 import PeoplePreview from "../people/PeoplePreview";
 import SettingLanding from "../settings/SettingLanding";
 import Profile from "../profile/Profile";
+import StructureProperty from "../property/StructrueProperty";
 
 const DashboardLayout = () => {
   return (
@@ -28,7 +29,10 @@ const DashboardLayout = () => {
           <Route path="/properties" element={<PropertyDetails />} />
           <Route path="/properties/add-property" element={<AddProperty />} />
           <Route path="/properties/add-address" element={<AddAddress />} />
-          <Route path="/properties/add-structure" element={<Dashboard />} />
+          <Route
+            path="/properties/add-structure"
+            element={<StructureProperty />}
+          />
           <Route path="/properties/add-others" element={<Dashboard />} />
 
           <Route path="/people" element={<PeopleDashboard />} />

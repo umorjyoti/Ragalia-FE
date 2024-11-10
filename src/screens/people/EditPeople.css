@@ -41,10 +41,10 @@
   height: auto !important;
 }
 
-.edit-tenant-container .ant-input-outlined,
-.edit-tenant-container .ant-select-selector,
-.edit-tenant-container .ant-picker-outlined,
-.edit-tenant-container .ant-input-number {
+.ant-input-outlined,
+.ant-select-selector,
+.ant-picker-outlined,
+.ant-input-number {
   border-radius: 8px !important;
   border: 1.5px solid #101428 !important;
   display: flex !important;

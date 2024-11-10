@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Steps, Input, Select, Button, Form, Tag, message } from "antd";
 import "./AddAddress.css";
+import { useNavigate } from "react-router-dom";
 
 const { Step } = Steps;
 const { Option } = Select;
@@ -40,6 +41,7 @@ const amenities = ["WIFI", "CCTV", "Elevator", "Terrace", "Garden", "Parking"];
 
 const AddAddress = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     state: "",
     pinCode: "",
@@ -96,6 +98,10 @@ const AddAddress = () => {
         : [...prevData.commonAmenities, amenity];
       return { ...prevData, commonAmenities: updatedAmenities };
     });
+  };
+
+  const onClickNext = () => {
+    navigate("/properties/add-structure");
   };
 
   return (
@@ -204,7 +210,7 @@ const AddAddress = () => {
             className="active-btn"
             type="primary"
             disabled={!isFormValid}
-            // onClick={onClickNext}
+            onClick={onClickNext}
           >
             Next
           </Button>
