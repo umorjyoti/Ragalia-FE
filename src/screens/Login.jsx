@@ -17,39 +17,102 @@ import loginImage from "../assets/images/login-image.png";
 import logo from "../assets/images/rag-logo.png";
 import googleLogo from "../assets/images/google_logo.png";
 import loginOtp from "../assets/images/login-otp.png";
+import { useDispatch, useSelector } from "react-redux";
+import { postPhoneNo, verifyOtp } from "../features/auth/authActions";
 
 const Login = () => {
   const navigate = useNavigate();
-  const inputRef = useRef(null);
+  const inputRef = useRef();
+  const inputRefs = useRef([]);
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state?.auth);
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [enableSubmit, setEnableSubmit] = useState(false);
-  const [otpData, setOtpData] = useState("");
+  const [otp, setOtp] = useState(["", "", "", ""]);
   const [otpView, setOtpView] = useState(false);
 
   const onClickGetOtp = () => {
-    setEnableSubmit(false);
-    setOtpView(true);
+    dispatch(postPhoneNo({ phone: phoneNumber }))
+      ?.unwrap()
+      ?.then((e) => {
+        setEnableSubmit(false);
+        setOtpView(true);
+      });
   };
 
   const onClickSubmitOtp = () => {
+    dispatch(
+      verifyOtp({
+        otp: otp.join(""),
+        userId: user?.data?.userId,
+      })
+    );
     //Submit the otp to BE and check for the response
     //navigate to Dashboard page
   };
 
   const onClickGoBack = () => {
-    setOtpData("");
+    setOtp(["", "", "", ""]);
     setOtpView(false);
+  };
+
+  // Handle input change and auto-move to the next input box
+  const handleInput = (e, index) => {
+    const { value } = e.target;
+
+    if (/^\d$/.test(value)) {
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+
+      // Move focus to the next input box if available
+      if (index < otp.length - 1) {
+        inputRefs.current[index + 1].focus();
+      }
+    }
+  };
+
+  // Handle backspace and navigation
+  const handleKeyDown = (e, index) => {
+    const { key } = e;
+    const newOtp = [...otp];
+
+    if (key === "Backspace") {
+      if (newOtp[index]) {
+        // Clear the current box value
+        newOtp[index] = "";
+        setOtp(newOtp);
+      } else if (index > 0) {
+        // Move focus to the previous box if empty
+        inputRefs.current[index - 1].focus();
+        newOtp[index - 1] = "";
+        setOtp(newOtp);
+      }
+    }
+  };
+
+  // Handle paste event
+  const handlePaste = (e) => {
+    const pastedData = e.clipboardData.getData("text").trim();
+    if (/^\d{4,5}$/.test(pastedData)) {
+      const newOtp = pastedData.slice(0, 4).split("");
+      setOtp([...newOtp, "", "", "", ""].slice(0, 4));
+
+      // Focus the last filled box
+      inputRefs.current[Math.min(newOtp.length, 4) - 1].focus();
+    }
   };
 
   useEffect(() => {
     if (
       (!otpView && phoneNumber?.length === PHONE_NUMBER_LENGTH) ||
-      otpData?.length === OTP_LENGTH
+      (otp[0] !== "" && otp[1] !== "" && otp[2] !== "" && otp[3] !== "")
     )
       setEnableSubmit(true);
     else setEnableSubmit(false);
-  }, [phoneNumber, otpData]);
+  }, [phoneNumber, otp]);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -77,28 +140,23 @@ const Login = () => {
             <div className="login-signup-text-desc">{ENTER_OTP_TEXT}</div>
             <div className="otp-holder-parent">
               <div className="opt-input-holder">
-                <input
-                  value={otpData}
-                  onChange={(e) => setOtpData(e?.target?.value)}
-                  className="otp-input-box"
-                />
-                <input
-                  value={otpData}
-                  onChange={(e) => setOtpData(e?.target?.value)}
-                  className="otp-input-box"
-                />
-                <input
-                  value={otpData}
-                  onChange={(e) => setOtpData(e?.target?.value)}
-                  className="otp-input-box"
-                />
-                <input
-                  value={otpData}
-                  onChange={(e) => setOtpData(e?.target?.value)}
-                  className="otp-input-box"
-                />
+                {otp.map((digit, index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    value={digit}
+                    maxLength={1}
+                    onInput={(e) => handleInput(e, index)}
+                    onKeyDown={(e) => handleKeyDown(e, index)}
+                    onPaste={handlePaste}
+                    ref={(el) => (inputRefs.current[index] = el)}
+                    className="otp-input-box"
+                  />
+                ))}
               </div>
-              <div className="resend-btn">Resend Otp</div>
+              <div onClick={onClickGetOtp} className="resend-btn">
+                Resend Otp
+              </div>
               <button
                 onClick={onClickSubmitOtp}
                 disabled={!enableSubmit}
@@ -110,11 +168,7 @@ const Login = () => {
               >
                 Confirm
               </button>
-              <button
-                onClick={onClickGoBack}
-                disabled={!enableSubmit}
-                className={"login-btn back-btn"}
-              >
+              <button onClick={onClickGoBack} className={"login-btn back-btn"}>
                 Go Back
               </button>
               <div className="message-text">{LOGIN_MESSAGE}</div>

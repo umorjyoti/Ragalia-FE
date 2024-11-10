@@ -195,6 +195,7 @@
   border: 1.5px solid #3d3d3d;
   padding: 12px;
   width: 74px;
+  text-align: center;
 }
 .login-details-container .resend-btn {
   color: #5871ff;
