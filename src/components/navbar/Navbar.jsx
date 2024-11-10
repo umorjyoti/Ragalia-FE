@@ -19,7 +19,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Modal } from "antd";
 import Lottie from "react-lottie";
 
-import logout from "../../assets/json/logout.json";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/auth/authSlice";
+import door from "../../assets/json/logout.json";
 
 const NavButton = ({ icon, onClickBtn, btnName, active = false }) => {
   return (
@@ -42,6 +44,7 @@ const NavButton = ({ icon, onClickBtn, btnName, active = false }) => {
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const [activeBtn, setActiveBtn] = useState("");
   const [logoutModal, setLogOutModal] = useState(false);
@@ -65,7 +68,7 @@ const Navbar = () => {
   }, [location]);
 
   const handleLogout = () => {
-    //clear local storage
+    dispatch(logout());
   };
 
   const onClickCancel = () => {
@@ -76,7 +79,7 @@ const Navbar = () => {
     loop: true,
     autoplay: true,
     renderer: "svg",
-    animationData: logout,
+    animationData: door,
   };
 
   return (

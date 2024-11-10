@@ -15,6 +15,7 @@ const authSlice = createSlice({
   reducers: {
     logout: (state) => {
       state.user = null;
+      state.userJWT = null;
       localStorage.removeItem("jwt");
     },
     setUser: (state, action) => {

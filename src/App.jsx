@@ -19,6 +19,7 @@ const App = () => {
       dispatch(setUser({ token }));
     } else {
       setIsAuthorised(false);
+
       dispatch(logout());
     }
   }, [dispatch, userJWT]);
