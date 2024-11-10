@@ -215,7 +215,7 @@ const StructureProperty = () => {
         <Button onClick={addRoom}>+ Add Room</Button>
       </div>
 
-      <div className="room-details">
+      <div className="room-detail">
         <Input
           placeholder="Room Number"
           value={floors[selectedFloor].rooms[selectedRoom].roomNumber}
