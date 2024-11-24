@@ -12,48 +12,22 @@ import {
 } from "antd";
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import "./StructureProperty.css";
-import moment from "moment";
 
 const { Step } = Steps;
 const { Option } = Select;
 
 const RenderRoomData = ({ currentRoom, handleRoomDetailChange }) => {
-  const [form] = Form.useForm();
-
   useEffect(() => {
-    console.log("c", currentRoom);
-    if (currentRoom) {
-      form.setFieldsValue({
-        room_number: currentRoom.roomNumber,
-        room_type: currentRoom.type,
-        sharing_type: currentRoom.sharing,
-        rent_amount: currentRoom.rent,
-        security_deposit: currentRoom.deposit,
-        late_fee: currentRoom.lateFee,
-        room_availability:
-          currentRoom.availability && moment(currentRoom.availability).isValid()
-            ? moment(currentRoom.availability)
-            : null,
-        tenant_type: currentRoom.tenantType,
-        room_ammenities: currentRoom.amenities,
-      });
-    }
-  }, [currentRoom, form]);
-
+    console.log("currentRoom", currentRoom);
+  }, [currentRoom]);
   return (
-    <Form form={form} layout="vertical" className="room-details">
+    <Form layout="vertical" className="room-details">
       <Form.Item
         label="Room Number"
         name={"room_number"}
         className="form-item-stuct"
       >
-        <Input
-          placeholder="Room Number"
-          value={currentRoom?.roomNumber}
-          onChange={(e) =>
-            handleRoomDetailChange("roomNumber", e?.target?.value)
-          }
-        />
+        <Input placeholder="Room Number" value={currentRoom?.roomNumber} />
       </Form.Item>
       <Form.Item
         className="form-item-stuct"
@@ -119,9 +93,6 @@ const RenderRoomData = ({ currentRoom, handleRoomDetailChange }) => {
       >
         <DatePicker
           placeholder="Room Availability"
-          value={
-            currentRoom?.availability ? moment(currentRoom.availability) : null
-          }
           onChange={(date, dateString) =>
             handleRoomDetailChange("availability", dateString)
           }

@@ -1,41 +1,128 @@
 .structure-property-container {
-  width: 100%;
+  width: 100vw;
   height: calc(100vh - 67px);
-  padding: 20px;
   overflow-y: auto;
+  padding: 20px;
 }
 
-.floor-tabs,
-.room-list,
-.floor-actions,
-.room-details,
-.navigation-buttons {
+.structure-property-steps {
   margin-bottom: 20px;
 }
 
-.floor-tabs button,
-.room-list button {
-  margin-right: 8px;
+.structure-property-floors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
 }
 
-.floor-actions select {
-  width: 200px;
+.structure-property-floor {
+  padding: 8px 12px;
+  background: #e6f7ff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
 }
 
-.room-detail {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+.structure-property-floor.selected {
+  background: #1890ff;
+  color: white;
 }
 
-.room-amenities {
-  grid-column: span 2;
-}
-
-.navigation-buttons {
+.structure-property-room {
+  padding: 8px 12px;
+  background: #f0f5ff;
+  border-radius: 4px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.structure-property-rooms {
+  margin-top: 20px;
+}
+
+.structure-property-rooms .ant-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.structure-property-container .add-prop-header {
+  padding: 32px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.structure-property-container .save-exit-button {
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #a0a4bb;
+  padding: 5px 10px;
+
+  color: #a0a4bb;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.13px;
+}
+
+.structure-property-container .add-property-text {
+  color: #101428;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.structure-property-container .floors-list {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  gap: 4px;
+}
+.structure-property-container .room-data {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.structure-property-container .rooms-list {
+  border-right: 2px solid #d0d2dd;
+  padding-right: 40px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.structure-property-container .room-item {
+  padding: 8px;
+  border: 1px solid #d0d2dd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.structure-property-container .room-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 0px 40px;
+}
+.structure-property-container .form-item-stuct {
+  width: 46% !important;
+}
+.structure-property-container .full-width-form {
+  width: 100% !important;
 }
