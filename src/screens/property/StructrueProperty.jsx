@@ -13,6 +13,7 @@ import {
 import { DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import "./StructureProperty.css";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 const { Step } = Steps;
 const { Option } = Select;
@@ -168,6 +169,8 @@ const RenderRoomData = ({ currentRoom, handleRoomDetailChange }) => {
 };
 
 const StructureProperty = () => {
+  const navigate = useNavigate();
+
   const [floors, setFloors] = useState([
     {
       floorNumber: 0,
@@ -324,6 +327,10 @@ const StructureProperty = () => {
     setFloors(updatedFloors);
   };
 
+  const onClickNext = () => {
+    navigate("/properties/reservation");
+  };
+
   useEffect(() => {
     setCurrentRoom(floors?.[selectedFloor]?.rooms?.[selectedRoom]);
   }, [selectedFloor, selectedRoom]);
@@ -449,6 +456,17 @@ const StructureProperty = () => {
         <Button onClick={addNewRoom}>Create New Room</Button>
         <Button onClick={duplicateRoom}>Duplicate Room</Button>
       </Modal>
+      <div className="button-group">
+        <Button className="back-btn">Back</Button>
+        <Button
+          className="active-btn"
+          type="primary"
+          disabled={false}
+          onClick={onClickNext}
+        >
+          Next
+        </Button>
+      </div>
     </div>
   );
 };

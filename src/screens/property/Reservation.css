@@ -1,0 +1,118 @@
+.reservation-property-container {
+  width: 100vw;
+  height: calc(100vh - 67px);
+  overflow-y: auto;
+  padding: 28px 40px;
+  padding-bottom: 120px;
+}
+
+.reservation-property-container .add-prop-header {
+  padding: 32px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.reservation-property-container .save-exit-button {
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #a0a4bb;
+  padding: 5px 10px;
+
+  color: #a0a4bb;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.13px;
+}
+.reservation-property-container .add-property-text {
+  color: #101428;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+.reservation-property-container .building-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.reservation-property-container .building-title {
+  color: #101428;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+.reservation-property-container .add-photos-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid #101428;
+  border-radius: 8px;
+  height: 150px;
+  width: 150px;
+  font-size: 24px;
+  justify-content: center;
+  cursor: pointer;
+}
+.reservation-property-container .text-plus {
+  color: #101428;
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+}
+.reservation-property-container .building-photos-top {
+  margin-top: 20px;
+}
+.reservation-property-container .reservaton-box-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.reservation-property-container .reservation-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #101428;
+  color: #101428;
+  cursor: pointer;
+}
+.reservation-property-container .reservation-box .reservation-header-text {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+.reservation-property-container .reservation-sub-text {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.reservation-property-container .icons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+}
+.reservation-property-container .reservation-box-active {
+  color: #5871ff !important;
+  border-color: #5871ff !important;
+}

@@ -15,6 +15,7 @@ import PeoplePreview from "../people/PeoplePreview";
 import SettingLanding from "../settings/SettingLanding";
 import Profile from "../profile/Profile";
 import StructureProperty from "../property/StructrueProperty";
+import Reservation from "../property/Reservation";
 
 const DashboardLayout = () => {
   return (
@@ -33,6 +34,7 @@ const DashboardLayout = () => {
             path="/properties/add-structure"
             element={<StructureProperty />}
           />
+          <Route path="/properties/reservation" element={<Reservation />} />
           <Route path="/properties/add-others" element={<Dashboard />} />
 
           <Route path="/people" element={<PeopleDashboard />} />
